@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  app:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: mmaction2
+    container_name: mma-dev
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+    # command: uvicorn main:app --host 0.0.0.0 --port 8002 --log-level debug
+    volumes:
+      - "./models:/home/appuser/models"
+
