@@ -11,9 +11,11 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: 1
+              count: 0 # Use only 2080 Ti
               capabilities: [ gpu ]
     # command: uvicorn main:app --host 0.0.0.0 --port 8002 --log-level debug
     volumes:
       - "./models:/home/appuser/models"
-
+      - "./data:/home/appuser/data"
+      - "./data:/home/appuser/mmaction2/data"
+      - "./custom_configs:/home/appuser/mmaction2/configs/custom_configs"

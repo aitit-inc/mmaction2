@@ -1,0 +1,8 @@
+jupyterlab==3.6
+mmcv==2.0.0
+mmdet==3.0.0
+mmengine==0.7.2
+mmpose==1.0.0
+moviepy==1.0.3
+openmim==0.3.7
+torchvision==0.14.1

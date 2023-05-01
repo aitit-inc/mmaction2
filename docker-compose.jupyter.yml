@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  app:
+    working_dir: /home/appuser
+    command: jupyter lab --ip=* --no-browser
+    ports:
+      - "8888:8888"
+    volumes:
+      # models and data dir settings is already set in the base docker-compose.yml
+      - "./notebooks:/home/appuser/notebooks"

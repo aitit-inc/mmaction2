@@ -32,3 +32,10 @@ COPY --chown=appuser:appuser ./mmaction2 /home/appuser/mmaction2
 WORKDIR /home/appuser/mmaction2
 RUN pip install -v -e .
 
+# Extra packages
+COPY --chown=appuser:appuser ./requirements.txt /home/appuser/
+WORKDIR /home/appuser
+RUN pip install -r requirements.txt
+
+ENV PATH $PATH:/home/appuser/.local/bin
+WORKDIR /home/appuser/mmaction2
